@@ -1,11 +1,15 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  background: #f0f0f5;
+interface ContainerProps { 
+  available: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
+  background: var(--gray-light);
   border-radius: 8px;
 
   header {
-    background: #ffb84d;
+    background: var(--yellow);
     border-radius: 8px 8px 0px 0px;
     height: 192px;
     overflow: hidden;
@@ -28,11 +32,11 @@ export const Container = styled.div`
     padding: 30px;
 
     h2 {
-      color: #3d3d4d;
+      color: var(--gray-dark);
     }
 
     p {
-      color: #3d3d4d;
+      color: var(--gray-dark);
 
       margin-top: 16px;
     }
@@ -41,7 +45,7 @@ export const Container = styled.div`
       font-style: normal;
       font-size: 24px;
       line-height: 34px;
-      color: #39b100;
+      color: var(--green);
 
       b {
         font-weight: 600;
@@ -55,7 +59,7 @@ export const Container = styled.div`
     align-items: center;
 
     padding: 20px 30px;
-    background: #e4e4eb;
+    background: var(--gray-medium);
     border-radius: 0px 0px 8px 8px;
 
     div.icon-container {
@@ -70,7 +74,7 @@ export const Container = styled.div`
         transition: 0.1s;
 
         svg {
-          color: #3d3d4d;
+          color: var(--gray-dark);
         }
 
         & + button {
@@ -84,7 +88,7 @@ export const Container = styled.div`
       align-items: center;
 
       p {
-        color: #3d3d4d;
+        color: var(--gray-dark);
       }
 
       .switch {
@@ -107,7 +111,7 @@ export const Container = styled.div`
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: #c72828;
+          background-color: var(--red);
           -webkit-transition: 0.4s;
           transition: 0.4s;
           border-radius: 16px;
@@ -127,11 +131,11 @@ export const Container = styled.div`
         }
 
         input:checked + .slider {
-          background-color: #39b100;
+          background-color: var(--green);
         }
 
         input:focus + .slider {
-          box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px var(--blue);
         }
 
         input:checked + .slider:before {
